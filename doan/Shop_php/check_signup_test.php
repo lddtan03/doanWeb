@@ -72,12 +72,11 @@ if (isset($_POST['btnSignUp'])) {
         $sql = "INSERT INTO `user`(`name`, `username`, `userPassword`, `email`, `gioiTinh`,`sdt`,`ngaySinh`,`diaChi`) VALUES ('$name','$username','$userPassword','$email','$gioiTinh','$sdt','$ngaySinh','$diaChi')";
         $result = mysqli_query($conn, $sql);
         if ($result) {
-            alert('sjfjbisbdfs');
             header("Location: dangnhap.php");
-            exit;
+            $data['message'] = "Đăng ký thành công";
         } else {
             header("Location: dangky.php");
-            exit;
+            
         }
     }
 }

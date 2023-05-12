@@ -70,6 +70,10 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="../shop-giay/assets/font/fontawesome/css/all.css" /> -->
+    <!-- <script src="assets/js/main.js"></script> -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Shop bán giày</title>
 </head>
 
 <!-- end header -->
@@ -297,7 +301,7 @@
         success: function(data) {
           if (data.error.name != null) {
             $(".form-group-name").addClass("invalid");
-            $(".form-message-name").text(data.error.username);
+            $(".form-message-name").text(data.error.name);
           } else {
             $(".form-group-name").removeClass("invalid");
             $(".form-message-name").text("");
@@ -518,54 +522,54 @@
 
     
     
-    $("#gioiTinh").blur(function() {
-      var name = $("#name").val();
-      var username = $("#username").val();
-      var email = $("#email").val();
-      var sdt = $("#sdt").val();
-      var userPassword = $("#userPassword").val();
-      var gioiTinh = $("#gioiTinh").val();
-      var ngaySinh = $("#ngaySinh").val();
-      var diaChi = $("#diaChi").val();
+    // $("#gioiTinh").blur(function() {
+    //   var name = $("#name").val();
+    //   var username = $("#username").val();
+    //   var email = $("#email").val();
+    //   var sdt = $("#sdt").val();
+    //   var userPassword = $("#userPassword").val();
+    //   var gioiTinh = $("#gioiTinh").val();
+    //   var ngaySinh = $("#ngaySinh").val();
+    //   var diaChi = $("#diaChi").val();
       
-      var data = {
-        name: name,
-        username: username,
-        email: email,
-        sdt: sdt,
-        userPassword: userPassword,
-        gioiTinh: gioiTinh,
-        ngaySinh: ngaySinh,
-        diaChi: diaChi,
-      };
-      // console.log(data);
-      $.ajax({
-        url: "check_signup_test.php", // Trang xử lý, mặc định trang hiện tại
-        method: "POST", // POST hoặc GET, mặc định GET
-        data: data, // Dữ liệu truyền lên server
-        dataType: "json", // html, text, script hoặc json
-        success: function(data) {
-          if (data.error.gioiTinh != null) {
-            $(".form-group-gioiTinh").addClass("invalid");
-            $(".form-message-gioiTinh").text(data.error.gioiTinh);
-          } else {
-            $(".form-group-gioiTinh").removeClass("invalid");
-            $(".form-message-gioiTinh").text("");
-          }
+    //   var data = {
+    //     name: name,
+    //     username: username,
+    //     email: email,
+    //     sdt: sdt,
+    //     userPassword: userPassword,
+    //     gioiTinh: gioiTinh,
+    //     ngaySinh: ngaySinh,
+    //     diaChi: diaChi,
+    //   };
+    //   // console.log(data);
+    //   $.ajax({
+    //     url: "check_signup_test.php", // Trang xử lý, mặc định trang hiện tại
+    //     method: "POST", // POST hoặc GET, mặc định GET
+    //     data: data, // Dữ liệu truyền lên server
+    //     dataType: "json", // html, text, script hoặc json
+    //     success: function(data) {
+    //       if (data.error.gioiTinh != null) {
+    //         $(".form-group-gioiTinh").addClass("invalid");
+    //         $(".form-message-gioiTinh").text(data.error.gioiTinh);
+    //       } else {
+    //         $(".form-group-gioiTinh").removeClass("invalid");
+    //         $(".form-message-gioiTinh").text("");
+    //       }
 
-          $("#gioiTinh").focus(function() {
-            $(this).parents(".sub-form").parents(".form-group-gioiTinh").removeClass("invalid");
-            $(this).parents(".sub-form").nextAll(".form-message-gioiTing").text("");
-            $("#form-message-error").text("");
-            $("#form-message-success").text("");
-          })
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-          alert(xhr.status);
-          alert(thrownError);
-        },
-      });
-    })
+    //       $("#gioiTinh").focus(function() {
+    //         $(this).parents(".sub-form").parents(".form-group-gioiTinh").removeClass("invalid");
+    //         $(this).parents(".sub-form").nextAll(".form-message-gioiTing").text("");
+    //         $("#form-message-error").text("");
+    //         $("#form-message-success").text("");
+    //       })
+    //     },
+    //     error: function(xhr, ajaxOptions, thrownError) {
+    //       alert(xhr.status);
+    //       alert(thrownError);
+    //     },
+    //   });
+    // })
 
 
     $("#diaChi").blur(function() {
@@ -639,7 +643,7 @@
         gioiTinh: gioiTinh,
         ngaySinh: ngaySinh,
         diaChi: diaChi,
-      
+        btnSignUp: btnSignUp
       };
       // console.log(data);
       $.ajax({
