@@ -493,9 +493,9 @@
         data: data, // Dữ liệu truyền lên server
         dataType: "json", // html, text, script hoặc json
         success: function(data) {
-          if (data.error.password != null) {
+          if (data.error.userPassword != null) {
             $(".form-group-password").addClass("invalid");
-            $(".form-message-password").text(data.error.password);
+            $(".form-message-password").text(data.error.userPassword);
           } else {
             $(".form-group-password").removeClass("invalid");
             $(".form-message-password").text("");
@@ -545,9 +545,9 @@
         data: data, // Dữ liệu truyền lên server
         dataType: "json", // html, text, script hoặc json
         success: function(data) {
-          if (data.error.password != null) {
+          if (data.error.gioiTinh != null) {
             $(".form-group-gioiTinh").addClass("invalid");
-            $(".form-message-gioiTinh").text(data.error.password);
+            $(".form-message-gioiTinh").text(data.error.gioiTinh);
           } else {
             $(".form-group-gioiTinh").removeClass("invalid");
             $(".form-message-gioiTinh").text("");

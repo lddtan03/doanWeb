@@ -66,15 +66,6 @@ if (empty($userPassword)) {
     }
 }
 
-// if (empty($password_confirm)) {
-//     $error['password_confirm'] = "Bạn cần nhập lại mật khẩu";
-// } else {
-//     if ($password != $password_confirm) {
-//         $error['password_confirm'] = "Mật khẩu nhập lại chưa chính xác";
-//     }
-// }
-
-
 if (isset($_POST['btnSignUp'])) {
     if (empty($error)) {
         $data['is_sign_up'] = 1;
